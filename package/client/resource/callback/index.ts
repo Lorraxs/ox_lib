@@ -1,6 +1,6 @@
 import { cache } from '../cache';
 
-const activeEvents: Record<string, (...args) => void> = {};
+const activeEvents: Record<string, (...args: any[) => void> = {};
 
 onNet(`__ox_cb_${cache.resource}`, (key: string, ...args: any) => {
   const resolve = activeEvents[key];
